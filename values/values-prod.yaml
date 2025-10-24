@@ -1,0 +1,16 @@
+namespace: demo-prod
+image:
+  repository: fastapi-uv-docker
+  tag: prod
+
+replicaCount: 2
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+env:
+  ENV_DEPLOYED_ENV: "prod"

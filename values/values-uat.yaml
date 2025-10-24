@@ -1,0 +1,7 @@
+namespace: demo-uat
+image:
+  repository: fastapi-uv-docker
+  tag: uat
+
+env:
+  ENV_DEPLOYED_ENV: "uat"

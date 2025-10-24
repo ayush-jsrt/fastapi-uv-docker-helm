@@ -1,0 +1,28 @@
+helmDefaults:
+  wait: true
+  timeout: 300
+  atomic: true
+
+repositories: []
+
+environments:
+  dev:
+    values:
+      - values/values-dev.yaml
+  uat:
+    values:
+      - values/values-uat.yaml
+  prod:
+    values:
+      - values/values-prod.yaml
+
+---
+releases:
+  - name: fastapi-uv
+    namespace: {{ .Values.namespace }}
+    chart: ./charts/fastapi-uv
+    values:
+      - charts/fastapi-uv/values.yaml
+      - values/values-{{ .Environment.Name }}.yaml
+    secrets:
+      - secrets/secret-{{ .Environment.Name }}.sops.yaml

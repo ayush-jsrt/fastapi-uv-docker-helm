@@ -1,0 +1,5 @@
+creation_rules:
+  - path_regex: '.*\.sops\.ya?ml$'
+    kms:
+      - arn:aws:kms:us-west-2:435951944183:key/68867867-032e-4067-bc11-720094dbdcea
+    

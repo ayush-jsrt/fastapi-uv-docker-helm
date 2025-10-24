@@ -1,0 +1,26 @@
+# Repository-level ignore list for temporary/decrypted files related to helmfile workflows
+# This file is a convention for local tooling / CI to avoid accidentally packaging or
+# committing decrypted/rendered artifacts. Helmfile itself does not read this file
+# automatically — use it with scripts or CI (rsync --exclude-from=.helmfileignore, tar --exclude-from etc.).
+
+# Rendered manifests
+rendered-*.yaml
+rendered-*.yml
+
+# Temporary decrypted SOPS outputs
+**/*.dec.yaml
+**/*.dec.yml
+secrets/*_dec.yaml
+secrets/*_unencrypted
+
+# Local test override files
+/tmp/*.yaml
+/tmp/*.yml
+
+# Environment files
+.env
+.env.*
+
+# Editor/OS noise
+.DS_Store
+*.swp

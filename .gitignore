@@ -1,0 +1,11 @@
+# SOPS: commit only encrypted secrets
+secrets/secret-*.yaml
+!secrets/secret-*.sops.yaml
+
+# Misc
+*.swp
+*.tmp
+*.log
+.DS_Store
+.idea/
+.vscode/
