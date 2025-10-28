@@ -9,3 +9,4 @@ secrets/secret-*.yaml
 .DS_Store
 .idea/
 .vscode/
+rendered*

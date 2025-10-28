@@ -1,7 +1,11 @@
 namespace: demo-prod
 image:
-  repository: fastapi-uv-docker
-  tag: prod
+  repository: 435951944183.dkr.ecr.us-west-2.amazonaws.com/ayush-fastapi
+  tag: latest
+
+service:
+  type: NodePort
+  port: 8080
 
 replicaCount: 2
 resources:

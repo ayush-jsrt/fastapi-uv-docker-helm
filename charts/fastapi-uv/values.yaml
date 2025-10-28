@@ -6,8 +6,8 @@ image:
 replicaCount: 1
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 8080
 
 env: {}  # non-sensitive env entries (merged from values-*.yaml)
 

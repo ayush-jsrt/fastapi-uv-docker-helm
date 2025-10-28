@@ -1,7 +1,20 @@
 namespace: demo-uat
 image:
-  repository: fastapi-uv-docker
-  tag: uat
+  repository: 435951944183.dkr.ecr.us-west-2.amazonaws.com/ayush-fastapi
+  tag: latest
+
+service:
+  type: NodePort
+  port: 8080
+
+replicaCount: 2
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
 
 env:
   ENV_DEPLOYED_ENV: "uat"
