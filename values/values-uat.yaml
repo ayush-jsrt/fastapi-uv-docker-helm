@@ -19,6 +19,9 @@ resources:
 env:
   ENV_DEPLOYED_ENV: "uat"
 
+networkPolicy:
+  enabled: false
+
 ingress:
   enabled: true
   className: nginx

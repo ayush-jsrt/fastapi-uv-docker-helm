@@ -20,6 +20,9 @@ resources:
 env:
   ENV_DEPLOYED_ENV: "dev"
 
+networkPolicy:
+  enabled: false
+
 ingress:
   enabled: true
   className: nginx

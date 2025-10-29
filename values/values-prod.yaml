@@ -19,6 +19,9 @@ resources:
 env:
   ENV_DEPLOYED_ENV: "prod"
 
+networkPolicy:
+  enabled: true
+
 ingress:
   enabled: true
   className: nginx
