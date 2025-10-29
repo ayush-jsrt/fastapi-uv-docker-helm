@@ -7,6 +7,10 @@ metadata:
   labels:
     app: {{ include "fastapi-uv.name" . }}
     chart: {{ include "fastapi-uv.chart" . }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   {{- if .Values.ingress.className }}
   ingressClassName: {{ .Values.ingress.className }}

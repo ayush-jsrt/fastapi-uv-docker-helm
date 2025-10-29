@@ -22,10 +22,15 @@ env:
 ingress:
   enabled: true
   className: nginx
-
+  annotations:
+    cert-manager.io/cluster-issuer: ca-issuer
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
   hosts:
     - host: fastapi.prod
       paths:
         - path: /
           pathType: Prefix
-  tls: []
+  tls:
+    - secretName: fastapi-prod-tls
+      hosts:
+        - fastapi.prod
