@@ -4,7 +4,7 @@ image:
   tag: latest
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 8080
 
 replicaCount: 2
@@ -18,3 +18,15 @@ resources:
 
 env:
   ENV_DEPLOYED_ENV: "dev"
+
+ingress:
+  enabled: true
+  className: nginx
+
+  hosts:
+    # - host: fastapi-dev.local
+    - host:
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
