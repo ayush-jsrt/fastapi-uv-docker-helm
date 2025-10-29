@@ -24,8 +24,7 @@ ingress:
   className: nginx
 
   hosts:
-    # - host: fastapi-dev.local
-    - host:
+    - host: fastapi.dev
       paths:
         - path: /
           pathType: Prefix

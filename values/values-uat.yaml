@@ -18,3 +18,14 @@ resources:
 
 env:
   ENV_DEPLOYED_ENV: "uat"
+
+ingress:
+  enabled: true
+  className: nginx
+
+  hosts:
+    - host: fastapi.uat
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
